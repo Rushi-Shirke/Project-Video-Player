@@ -1,0 +1,219 @@
+<html>
+	<head>
+		<title> Video tube beta </title>
+	</head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src='jQuery.js'></script>
+	<script type="text/javascript">
+
+	$(document).ready(function()
+	{
+		var videos=new Array(
+				'Armaan Malik - Tu-You (Performance Video)',
+				'Coke Studio - Season 14 - Pasoori - Ali Sethi x Shae Gill.mp4',
+				'Deva Deva - Lyric Video-Brahmāstra-Amitabh B, Ranbir, Alia-Pritam, Arijit, Jonita.mp4',
+				'Full Song- Pehla Pyaar - Kabir Singh - Shahid Kapoor, Kiara Advani - Armaan Malik - Vishal Mishra.mp4',
+				'Halamithi Habibo (Hindi) - Video Song - Beast - Thalapathy Vijay - Sun Pictures - Nelson - Anirudh.mp4',
+				'Main Agar Kahoon-Bol Do Na Zara - T-Series Mixtape - Armaan Malik & Jonita Gandhi  - Bhushan Kumar.mp4',
+				'Master - Vaathi Coming Video - Thalapathy Vijay - Anirudh Ravichander - Lokesh Kanagaraj.mp4' );
+		
+		var names=new Array(
+				'Achko Machko - ft. Yo Yo Honey Singh',
+				'Ashai Mugham - ft. Vidhya and Vandana',
+				'Badtameez Dil - Ranbeer kapoor Deepika',
+				'Balam Pichkari - Badtameez Dil',
+				'9mm Akon - Ft. David Banner , Snoop dogg',
+				'Dr. Dre - Kush ft. Snoop Dogg, Akon',
+				'Zindagi Na Milegi Dobara - Sky Diving');
+        
+	// 	$('td').click(function(){
+	// 		var id = $(this).attr('id');
+	// 		alert("id");
+	// 		$("#vid").attr('src',videos[id]);
+	// 		$("#vid").attr('controls','controls');
+	// 		$("#vid").attr('autoplay','autoplay');
+	// })
+
+
+		$('input').select(this).click(function()
+		{
+			var id= $(this).attr('id');
+			$("#info").html("<b style='color:black'>Now Playing :</b> &nbsp; &nbsp;<i> "+names[id] +"</i>");
+     
+			$("#vid").attr('src',videos[id]);
+			$("#vid").attr('controls','controls');
+			$("#vid").attr('autoplay','autoplay');
+		})
+
+		$('#colorPicker').change(function()
+		{
+			var newColor= $(this).val();
+			$('#mains').css({'background':newColor});
+		})
+
+		$('input').select(this).mouseenter(function()
+		{
+			$(this).css({'height':'120px','width':'170px'});
+		})
+
+		$('input').select(this).mouseout(function()
+		{
+			$(this).css({'height':'91px','width':'140px'});
+		})
+
+	})
+	
+	</script>
+
+	<style type="text/css">
+		div
+		{
+			background:gray;
+			border:4px solid;
+		}
+		td
+		{
+			background-size:50% 50%;
+			color:white;
+		}
+		#vid
+		{
+			margin-left:50px;
+			margin-top:90px; 
+			height:470px; 
+			width:500px;
+		}
+		
+		#mains
+		{
+			position:absolute;
+			height:700px;
+			width:700px;
+		}
+		#lists
+		{
+			height:680px;
+			width:350px;
+			position:relative;
+			float:right;
+		}
+		#info
+		{
+			color:blue;
+			font-weight:bold;
+			-webkit-transform:translate(40px,70px);
+			position:absolute;
+			font-size:18px;
+		}
+		#colorcng
+		{
+			position:absolute;
+			-webkit-transform:translate(350px,00px);
+			width:350px;
+			height:50px;
+			font-size:20px;
+		}
+	</style>
+
+	<body>
+		<div id='mains'>
+			<p id="colorcng">
+				Choose background...
+				<select id="colorPicker">
+					<option value="gray">None</option>
+					<option value="yellow">Yellow</option>
+					<option value="salmon">Salmon</option>
+					<option value="lightblue">Light Blue</option>
+					<option value="limegreen">Lime Green</option>
+					<option value="aqua">Aqua</option>
+				</select>
+			</p> 
+			<p id='info'></p>
+			<video id='vid'></video>
+		</div>
+
+		<div id='lists'>
+			<table>
+				<tr>
+					<td>
+						1.
+					</td>
+					<td>
+						<input id='0' type="image" src="11.jpg"/>
+					</td>
+					<td id='0'>
+						Achko Machko - ft. Yo Yo Honey Singh
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						2.
+					</td>
+					<td>
+						<input id='1' type="image" src="12.jpg"/>
+					</td>
+					<td id='1'>
+						Ashai Mugham - ft. Vidhya and Vandana
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						3.
+					</td>
+					<td>
+						<input id='2' type="image" src="13.jpg"/>
+					</td>
+					<td>
+						Badtameez Dil - Ranbeer kapoor Deepika
+					</td>
+				</tr>
+				<tr>
+					<td>
+						4.
+					</td>
+					<td>
+						<input id='3' type="image" src="14.jpg"/>
+					</td>
+					<td>
+						Balam Pichkari - Badtameez Dil
+					</td>
+				</tr>
+				<tr>
+					<td>
+						5.
+					</td>
+					<td>
+						<input id='4' type="image" src="15.jpg"/>
+					</td>
+					<td>
+						9mm Akon - Ft. David Banner , Snoop dogg
+					</td>
+				</tr>
+				<tr>
+					<td>
+						6.
+					</td>
+					<td>
+						<input id='5' type="image" src="16.jpg"/>
+					</td>
+					<td>
+						Dr. Dre - Kush ft. Snoop Dogg, Akon
+					</td>
+				</tr>
+				<tr>
+					<td>
+						7.
+					</td>
+					<td>
+						<input id='6' type="image" src="17.jpg"/>
+					</td>
+					<td>
+						Zindagi Na Milegi Dobara - Sky Diving
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
